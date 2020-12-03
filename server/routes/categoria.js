@@ -68,7 +68,7 @@ app.put("/categoria/:id", function (req, res) {
           msg: "Ocurrio un error al momento de actualizar",
         });
       }
-      
+
       res.json({
         ok: true,
         msg: "Categoria actualizado con exito",
@@ -79,24 +79,24 @@ app.put("/categoria/:id", function (req, res) {
 });
 
 // DELETE
-app.delete('/categoria/:id',function(req,res){
-    let id = req.params.id;
+app.delete("/categoria/:id", function (req, res) {
+  let id = req.params.id;
 
-    Categoria.findByIdAndDelete({_id:id},(err,ctgborrada)=>{
-        if(err){
-            return res.status(400).json({
-                ok: false,
-                msg: 'Ocurrio un error al eliminar la categoria',
-                err
-            });
-        }
+  Categoria.findByIdAndDelete({ _id: id }, (err, ctgborrada) => {
+    if (err) {
+      return res.status(400).json({
+        ok: false,
+        msg: "Ocurrio un error al eliminar la categoria",
+        err,
+      });
+    }
 
-        res.json({
-            ok:true,
-            msg: 'Categoria eliminada con exito',
-            ctgborrada
-        });
+    res.json({
+      ok: true,
+      msg: "Categoria eliminada con exito",
+      ctgborrada,
     });
+  });
 });
 
 module.exports = app;

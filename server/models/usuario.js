@@ -5,33 +5,33 @@ let Schema = mongoose.Schema;
 let usuarioSchema = new Schema({
   nombre: {
     type: String,
-    required: [true, "El nombre es necesario"]
+    required: [true, "El nombre es necesario"],
   },
   email: {
     type: String,
     required: [true, "El correo es necesario"],
-    unique: true
+    unique: true,
   },
   password: {
     type: String,
-    required: [true, "La contraseña es necesaria"]
+    required: [true, "La contraseña es necesaria"],
   },
   img: {
     type: String,
-    required: false
+    required: false,
   },
   role: {
     type: String,
-    default: "USER_ROLE"
+    default: "USER_ROLE",
   },
   estado: {
     type: Boolean,
-    default: true
+    default: true,
   },
   google: {
     type: Boolean,
-    default: false
+    default: false,
   },
 });
 
-module.exports = mongoose.model('Usuario',usuarioSchema);
+module.exports = mongoose.model("Usuario", usuarioSchema);

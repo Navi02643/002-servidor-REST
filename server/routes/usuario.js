@@ -1,5 +1,6 @@
 const { request } = require("express");
 const express = require("express");
+const bcrypt = require("bcrypt");
 const _ = require("underscore");
 const usuario = require("../models/usuario");
 const Usuario = require("../models/usuario");
@@ -34,7 +35,7 @@ app.post("/usuario", function (req, res) {
   let usr = new Usuario({
     nombre: body.nombre,
     email: body.email,
-    password: body.password,
+    password: bcrypt.hashSync(body.password, 10)
   });
 
   usr.save((err, usrDB) => {
@@ -69,7 +70,7 @@ app.put("/usuario/:id", function (req, res) {
           msg: "Ocurrio un error al momento de actualizar",
         });
       }
-      
+
       res.json({
         ok: true,
         msg: "Usuario actualizado con exito",
