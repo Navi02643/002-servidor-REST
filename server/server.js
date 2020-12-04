@@ -18,7 +18,7 @@ app.use(require("./routes/productos"));
 app.use(require('./routes/login'));
 
 mongoose.connect(
-  "mongodb://localhost:27017/cafeteria",
+  'mongodb+srv://admin:admin1234@cluster0.pazbo.mongodb.net/cafeteria',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,

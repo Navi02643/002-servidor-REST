@@ -1,2 +1,6 @@
-Carlos Ivan Mercado Marin 190447
-Jose Guadalupe Castillo Sanchez 190447
+Nombre de los intregantes del equipo:
+    Carlos Ivan Mercado Marin 190447
+    Jose Guadalupe Castillo Sanchez 190447
+
+URL:
+https://equipo1-4a-2do-parcial-awos.herokuapp.com/
