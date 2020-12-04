@@ -57,7 +57,7 @@ app.post("/usuario", function (req, res) {
 
 app.put("/usuario/:id", function (req, res) {
   let id = req.params.id;
-  let body = _.pick(req.body, ["nombre", "email"]);
+  let body = _.pick(req.body, ["nombre","apellidos" ,"email"]);
 
   Usuario.findByIdAndUpdate(
     id,
