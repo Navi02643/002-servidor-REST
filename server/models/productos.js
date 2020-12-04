@@ -15,6 +15,7 @@ let productosSchema = new Schema({
   categoria: {
     type: Schema.Types.ObjectId,
     ref: "Categoria",
+    required: [true,"Es necesario una ID de categoria"]
   },
   disponible: {
     type: Boolean,
@@ -23,6 +24,7 @@ let productosSchema = new Schema({
   usuario: {
     type: Schema.Types.ObjectId,
     ref: "Usuario",
+    required: [true,"Es necesario una ID de usuario"]
   },
 });
 
