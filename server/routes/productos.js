@@ -10,7 +10,7 @@ app.get("/productos", (req, res) => {
   let desde = req.query.desde || 0;
   let hasta = req.query.hasta || 5;
 
-  Productos.find({ disponibilidad: true })
+  Productos.find({ disponible: true })
     .skip(Number(desde))
     .limit(Number(hasta))
     .populate("categoria", "descripcion")
