@@ -20,6 +20,7 @@ let productosSchema = new Schema({
   disponible: {
     type: Boolean,
     required: [true, "La disponibilidad es necesaria"],
+    default: true
   },
   usuario: {
     type: Schema.Types.ObjectId,
